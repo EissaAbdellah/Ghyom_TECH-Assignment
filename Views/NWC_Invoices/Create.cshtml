@@ -1,0 +1,208 @@
+﻿@model GhyomAssignment.Models.NWC_Invoices
+
+@{
+    ViewData["Title"] = "Create";
+    //RANDOM 
+    Random rnd = new Random();
+    int card = rnd.Next(100000);     // creates a number between 0 and 51
+
+    string NoINvoice = DateTime.Today.Month.ToString() + card;
+
+    var year = DateTime.Today.Year.ToString();
+    var currentDate = DateTime.Today.ToShortDateString();
+
+    var NextDate = DateTime.Today.AddMonths(1);
+    var LastDate = DateTime.Today.AddMonths(-1);
+
+
+}
+
+
+
+
+
+
+<h4>الفواتير</h4>
+<hr />
+<div class="row">
+    <h2>
+        @ViewData["NWC_Invoices_Subscriber_Name"]
+       
+
+        
+    </h2>
+    <h3>
+        @ViewData["NWC_Invoices_Subscriber_ID"]
+
+    </h3>
+    <p>
+        
+            @ViewData["NWC_Number_Of_Units"] :عدد الوحدات
+
+        
+    </p>
+    <hr />
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_No" class="control-label">
+                    رقم الفاتورة
+                </label>
+                <input readonly  value="@NoINvoice" asp-for="NWC_Invoices_No" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_No" class="text-danger"></span>
+            </div>
+
+
+
+            
+                
+           
+
+
+
+
+
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Rreal_Estate_Types_No" class="control-label">
+                    رمز نوع العقار
+                </label>
+                <input readonly value=@ViewData["NWC_Invoices_Rreal_Estate_Types_No"] asp-for="NWC_Invoices_Rreal_Estate_Types_No" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Subscription_No" class="control-label">
+                    رقم الاشتراك
+                </label>
+                <input readonly value=@ViewData["NWC_Invoices_Subscription_No"] asp-for="NWC_Invoices_Subscription_No" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Subscriber_No" class="control-label">
+                    رقم المشترك
+                </label>
+                <input readonly value=@ViewData["NWC_Invoices_Subscriber_No"] asp-for="NWC_Invoices_Subscriber_No" class="form-control" />
+
+            </div>
+        
+
+
+
+
+
+
+            <div class="form-group">
+               
+                <input hidden  value="0"  asp-for="NWC_Invoices_Year" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Date" class="control-label">
+                    تاريخ الفاتورة
+                </label>
+                <input type="datetime" value="@currentDate" asp-for="NWC_Invoices_Date" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_From" class="control-label">
+                    من تاريخ
+                </label>
+                <input type="datetime" value="@LastDate" asp-for="NWC_Invoices_From" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_To" class="control-label">
+                    الي تاريخ
+                </label>
+                <input readonly type="datetime" value="@NextDate"  asp-for="NWC_Invoices_To" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_To" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Previous_Consumption_Amount" class="control-label">
+                    اخر قراءة للعداد
+                </label>
+                <input readonly value=@ViewData["NWC_Last_Reading"] asp-for="NWC_Invoices_Previous_Consumption_Amount" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Previous_Consumption_Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Current_Consumption_Amount" class="control-label">
+                    القراءة الحالية
+                </label>
+                <input required asp-for="NWC_Invoices_Current_Consumption_Amount" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Current_Consumption_Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <input hidden  value=0 asp-for="NWC_Invoices_Amount_Consumption" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Amount_Consumption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Service_Fee" class="control-label">
+                    قيمة رسوم الخدمة 
+                </label>
+                <input  required asp-for="NWC_Invoices_Service_Fee" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Service_Fee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Tax_Rate" class="control-label">
+                    نسبة الضريبة
+                </label>
+                <input required asp-for="NWC_Invoices_Tax_Rate" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Tax_Rate" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input   class="form-check-input" asp-for="NWC_Invoices_Is_There_Sanitation" />  الصرف الصحي
+                </label>
+            </div>
+
+
+
+            <div class="form-group">
+              
+                <input hidden value=0 asp-for="NWC_Invoices_Wastewater_Consumption_Value" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Wastewater_Consumption_Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+             
+                <input hidden value=0 asp-for="NWC_Invoices_Total_Invoice" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Invoice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <input hidden value=0 asp-for="NWC_Invoices_Tax_Value" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Tax_Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <input hidden value=0 asp-for="NWC_Invoices_Total_Bill" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Bill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <input hidden value=" لا يوجد" asp-for="NWC_Invoices_Total_Reasons" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Reasons" class="text-danger"></span>
+            </div>
+
+
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="حفظ" class="btn btn-primary" />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

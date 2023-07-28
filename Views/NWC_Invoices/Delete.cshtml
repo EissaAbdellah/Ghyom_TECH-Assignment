@@ -1,0 +1,72 @@
+﻿@model GhyomAssignment.Models.NWC_Invoices
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>حذف</h1>
+
+<h3>هل انت متأكد من حذف هذه الفاتورة ؟</h3>
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Invoices_No)
+        </dd>
+        <dt class = "col-sm-2">
+           رقم الفاتورة
+        </dt>
+
+
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types.NWC_Rreal_Estate_Types_Name)
+        </dd>
+        <dt class="col-sm-2">
+            نوع العقار
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscription_File.Id)
+        </dd>
+        <dt class="col-sm-2">
+            رقم الاشتراك
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File.NWC_Subscriber_File_Name)
+        </dd>
+        <dt class="col-sm-2">
+            اسم المشترك
+        </dt>
+
+
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Invoices_Date)
+        </dd>
+       
+        <dt class = "col-sm-2">
+            تاريخ الفاتورة
+        </dt>
+
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Invoices_Total_Bill)
+        </dd>
+      
+        <dt class = "col-sm-2">
+            مجموع الفاتورة
+        </dt>
+       
+       
+    
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index">العودة الي القائمة</a>
+    </form>
+</div>

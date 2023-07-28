@@ -1,0 +1,75 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.sidebar {
+    margin-top:20px;
+    position: fixed;
+    top: 0;
+    right: 0; /* Position the sidebar on the right side of the screen */
+    width: 250px;
+    height: 100%;}
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
+    .sidebar a {
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+    font-weight: 700;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+}
+
+body {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-4 {
+    width: 50%;
+    margin: 0 auto;
+}

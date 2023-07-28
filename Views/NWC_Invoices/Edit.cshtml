@@ -1,0 +1,124 @@
+﻿@model GhyomAssignment.Models.NWC_Invoices
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>NWC_Invoices</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_No" class="control-label"></label>
+                <input asp-for="NWC_Invoices_No" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Year" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Year" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Date" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Date" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_From" class="control-label"></label>
+                <input asp-for="NWC_Invoices_From" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_To" class="control-label"></label>
+                <input asp-for="NWC_Invoices_To" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_To" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Previous_Consumption_Amount" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Previous_Consumption_Amount" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Previous_Consumption_Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Current_Consumption_Amount" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Current_Consumption_Amount" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Current_Consumption_Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Amount_Consumption" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Amount_Consumption" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Amount_Consumption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Service_Fee" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Service_Fee" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Service_Fee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Tax_Rate" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Tax_Rate" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Tax_Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="NWC_Invoices_Is_There_Sanitation" /> @Html.DisplayNameFor(model => model.NWC_Invoices_Is_There_Sanitation)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Wastewater_Consumption_Value" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Wastewater_Consumption_Value" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Wastewater_Consumption_Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Total_Invoice" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Total_Invoice" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Invoice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Tax_Value" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Tax_Value" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Tax_Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Total_Bill" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Total_Bill" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Bill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Total_Reasons" class="control-label"></label>
+                <input asp-for="NWC_Invoices_Total_Reasons" class="form-control" />
+                <span asp-validation-for="NWC_Invoices_Total_Reasons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Rreal_Estate_Types_No" class="control-label"></label>
+                <select asp-for="NWC_Invoices_Rreal_Estate_Types_No" class="form-control" asp-items="ViewBag.NWC_Invoices_Rreal_Estate_Types_No"></select>
+                <span asp-validation-for="NWC_Invoices_Rreal_Estate_Types_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Subscription_No" class="control-label"></label>
+                <select asp-for="NWC_Invoices_Subscription_No" class="form-control" asp-items="ViewBag.NWC_Invoices_Subscription_No"></select>
+                <span asp-validation-for="NWC_Invoices_Subscription_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Invoices_Subscriber_No" class="control-label"></label>
+                <select asp-for="NWC_Invoices_Subscriber_No" class="form-control" asp-items="ViewBag.NWC_Invoices_Subscriber_No"></select>
+                <span asp-validation-for="NWC_Invoices_Subscriber_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

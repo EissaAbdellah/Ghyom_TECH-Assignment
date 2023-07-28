@@ -1,0 +1,72 @@
+﻿@model IEnumerable<GhyomAssignment.Models.NWC_Subscriber_File>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>المشتركين</h1>
+
+<p>
+    <a asp-action="Create">انشاء جديد</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+               رقم الهوية
+            </th>
+            <th>
+               الاسم
+            </th>
+            <th>
+                المدينة
+            </th>
+            <th>
+                الحي
+            </th>
+            <th>
+                رقم الجوال
+            </th>
+            <th>
+                ملاحظات
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Reasons)
+            </td>
+            <td>
+               
+                    <a asp-action="Create" asp-controller="NWC_Invoices" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-circle-plus">
+                           
+                                اضافة فاتورة
+                            
+                           
+                        </i>
+
+                    </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+﻿@model GhyomAssignment.Models.NWC_Subscription_File
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>تعديل</h1>
+
+<h4>الاشتراكات</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NWC_Subscription_File_Unit_No" class="control-label">
+                    عدد الوحدات
+                </label>
+                <input asp-for="NWC_Subscription_File_Unit_No" class="form-control" />
+                <span asp-validation-for="NWC_Subscription_File_Unit_No" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="NWC_Subscription_File_Is_There_Sanitation" /> هل يوجد صرف صحي ؟
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Subscription_File_Last_Reading_Meter" class="control-label">
+                    اخر قراءة للعداد
+                </label>
+                <input asp-for="NWC_Subscription_File_Last_Reading_Meter" class="form-control" />
+                <span asp-validation-for="NWC_Subscription_File_Last_Reading_Meter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Subscription_File_Reasons" class="control-label">
+                    ملاحظات
+                </label>
+                <input asp-for="NWC_Subscription_File_Reasons" class="form-control" />
+                <span asp-validation-for="NWC_Subscription_File_Reasons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Subscription_File_Subscriber_Code" class="control-label">
+                    رقم المشترك
+                </label>
+                <input asp-for="NWC_Subscription_File_Subscriber_Code" class="form-control" />
+
+                <span asp-validation-for="NWC_Subscription_File_Subscriber_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NWC_Subscription_File_Rreal_Estate_Types_Code" class="control-label">
+                    نوع  العقار
+                </label>
+                <select asp-for="NWC_Subscription_File_Rreal_Estate_Types_Code" class="form-control" asp-items="ViewBag.NWC_Subscription_File_Rreal_Estate_Types_Code"></select>
+                <span asp-validation-for="NWC_Subscription_File_Rreal_Estate_Types_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="حفظ" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">العودة الي القائمة</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

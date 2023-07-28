@@ -1,0 +1,39 @@
+﻿@model GhyomAssignment.Models.NWC_Rreal_Estate_Types
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>التفاصيل</h1>
+
+<div>
+    <h4>انواع العقار</h4>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Code)
+        </dd>
+        <dt class = "col-sm-2">
+           رمز نوع العقار
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            وصف العقار
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Reasons)
+        </dd>
+        <dt class = "col-sm-2">
+            ملاحظات
+        </dt>
+       
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a> |
+    <a asp-action="Index">العودة الي القائمة</a>
+</div>

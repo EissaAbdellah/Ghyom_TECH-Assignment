@@ -1,0 +1,58 @@
+﻿@model GhyomAssignment.Models.NWC_Subscriber_File
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>حذف</h1>
+
+<h3>هل انت متأكد من حذف هذا المشترك ؟</h3>
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            رقم الهوية
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_Id)
+        </dd>
+        <dt class = "col-sm-2">
+            الاسم
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            المدينة
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_City)
+        </dd>
+        <dt class = "col-sm-2">
+            الحي
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_Area)
+        </dd>
+        <dt class = "col-sm-2">
+            رقم الجوال
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_Mobile)
+        </dd>
+        <dt class = "col-sm-2">
+            ملاحظات
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File_Reasons)
+        </dd>
+    </dl>
+    <br />
+
+    <form asp-action="حذف">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index">العودة الي القائمة</a>
+    </form>
+</div>

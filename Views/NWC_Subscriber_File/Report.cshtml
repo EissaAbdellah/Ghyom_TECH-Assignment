@@ -1,0 +1,79 @@
+﻿@model IEnumerable<GhyomAssignment.Models.NWC_Subscriber_File>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>المشتركين</h1>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                ملاحظات
+            </th>
+
+            <th>
+                رقم الجوال
+            </th>
+
+            <th>
+                الحي
+            </th>
+          
+            <th>
+                المدينة
+            </th>
+           
+           
+            <th>
+                الاسم
+            </th>
+
+            <th>
+                رقم الهوية
+            </th>
+           
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Reasons)
+                </td>
+
+                 <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Mobile)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Area)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_City)
+                </td>
+
+                 <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NWC_Subscriber_File_Id)
+                </td>
+               
+               
+               
+               
+               
+               
+            </tr>
+        }
+    </tbody>
+</table>

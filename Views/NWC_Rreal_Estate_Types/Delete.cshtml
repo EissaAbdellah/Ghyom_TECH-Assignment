@@ -1,0 +1,42 @@
+﻿@model GhyomAssignment.Models.NWC_Rreal_Estate_Types
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>حذف</h1>
+
+<h3>هل انت متأكد من حذف هذا ؟</h3>
+<div>
+    <h4>أنواع العقار</h4>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Code)
+        </dd>
+        <dt class = "col-sm-2">
+          رمز نوع العقار
+        </dt>
+
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            وصف العقار
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types_Reasons)
+        </dd>
+        <dt class = "col-sm-2">
+           ملاحظات
+        </dt>
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index">العودة الي القائمة</a>
+    </form>
+</div>

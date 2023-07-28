@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GhyomAssignment.Models.NWC_Rreal_Estate_Types>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>أنواع العقار</h1>
+
+
+
+<p>
+    <a asp-action="Create">انشاء جديد</a>
+   
+</p>
+
+
+
+
+<table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        رمز نوع العقار
+                    </th>
+                    <th>
+                        وصف العقار
+                    </th>
+                    <th>
+                        ملاحظات
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NWC_Rreal_Estate_Types_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NWC_Rreal_Estate_Types_Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NWC_Rreal_Estate_Types_Reasons)
+                        </td>
+                        <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-trash" style="color:red">
+                            حذف
+                        </i>
+                    </a>|
+                    <a asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-pen-to-square">
+                            تعديل
+                        </i>
+                    </a> |
+
+
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-circle-info">
+                            التفاصيل
+                        </i>
+                    </a>
+                </td>
+                    </tr>
+                }
+            </tbody>
+        </table>

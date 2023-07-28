@@ -1,0 +1,65 @@
+﻿@model GhyomAssignment.Models.NWC_Subscription_File
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>التفاصيل</h1>
+
+<div>
+    <h4>الاشتراكات</h4>
+    <hr />
+    <dl class="row">
+
+
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscriber_File.NWC_Subscriber_File_Id)
+        </dd>
+        <dt class="col-sm-2">
+            رقم المشترك
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Rreal_Estate_Types.NWC_Rreal_Estate_Types_Name)
+        </dd>
+        <dt class="col-sm-2">
+            نوع العقار
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscription_File_Unit_No)
+        </dd>
+        <dt class = "col-sm-2">
+            عدد الوحدات
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscription_File_Is_There_Sanitation)
+        </dd>
+        <dt class = "col-sm-2">
+           هل يوجد صرف صحي ؟
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscription_File_Last_Reading_Meter)
+        </dd>
+        <dt class = "col-sm-2">
+           اخر قراء للعداد
+        </dt>
+      
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NWC_Subscription_File_Reasons)
+        </dd>
+        <dt class = "col-sm-2">
+           ملاحظات
+        </dt>
+        
+     
+       
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a> |
+    <a asp-action="Index">العودة الي القائمة</a>
+</div>

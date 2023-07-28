@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ghyom Tech</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GhyomAssignment.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="slide-nav bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ghyom Tech</a>
+                
+                <div class="row">
+                    <div class="col-2">
+
+
+                        <div class="sidebar ">
+                            <ul>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">الرئيسية
+                                        <i class="fa-solid fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Subscriber_File" asp-action="Index">تسجيل فاتورة
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Subscriber_File" asp-action="Create">تحديث بيانات مشترك
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Subscription_File" asp-action="Index">تحديث بيانات اشتراك
+                                        <i class="fa-solid fa-file-word"></i>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Rreal_Estate_Types" asp-action="Index">تحديث بيانات نوع العقار
+                                        <i class="fa-solid fa-file-word"></i>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Invoices" asp-action="Index">استفسار عن فاتورة
+                                        <i class="fa-regular fa-circle-question"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Subscriber_File" asp-action="Report">تقرير عن المشتركين
+                                        <i class="fa-solid fa-sheet-plastic"></i>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Subscription_File" asp-action="Report">تقرير عن الاشتراكات
+                                        <i class="fa-solid fa-sheet-plastic"></i>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="NWC_Invoices" asp-action="Report">تقرير الفواتير
+                                        <i class="fa-solid fa-sheet-plastic"></i>
+                                    </a>
+                                </li>
+
+
+
+
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </nav>
+    </header>
+
+
+
+     <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-left:0;">
+             
+
+            </ul>
+        </div>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="row">
+
+
+                <div class="col-10">
+            @RenderBody()
+
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Ghyom Tech 
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
